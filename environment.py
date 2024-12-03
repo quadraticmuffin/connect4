@@ -2,11 +2,11 @@ import gymnasium as gym
 import numpy as np
 from gymnasium import spaces
 from game import Connect4
-from policies import RandomPolicy
+from policies import MaskPolicy, RandomPolicy
 
 class Connect4Env(gym.Env):
     """Custom Environment that follows gym interface."""
-    def __init__(self, opp_policy=None):
+    def __init__(self, opp_policy: MaskPolicy = None):
         super().__init__()
         self.game = Connect4()
         self.action_space = spaces.Discrete(7)

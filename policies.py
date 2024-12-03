@@ -32,7 +32,7 @@ class MaskPolicy(BasePolicy, ABC):
 
     def predict(
         self,
-        observation: Union[np.ndarray, Dict[str, np.ndarray]],
+        observation: PyTorchObs,
         action_mask: np.ndarray,
         state: Optional[Tuple[np.ndarray, ...]] = None,
         episode_start: Optional[np.ndarray] = None,

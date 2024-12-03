@@ -7,6 +7,5 @@ model = MaskPPO(
     Connect4Env(), 
     learning_rate=lr_schedule,
     verbose=1,
-    device='cuda'
 )
 model.learn(total_timesteps=100000)

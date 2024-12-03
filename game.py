@@ -20,7 +20,7 @@ class Connect4:
         - player (int): The player making the move (1 or 2).
         
         Returns:
-        - bool: The new board state and whether the move results in a win.
+        - bool: Whether the move results in a win.
 
         Raises:
         - ValueError: If the move is invalid (e.g., column is full or out of bounds).
@@ -83,6 +83,10 @@ class Connect4:
             return 0  # No winner
         else:
             raise NotImplementedError
+    
+    def display(self):
+        for row in self.board:
+            print(''.join(map(str, row)).replace('0', '-').replace('1', 'X').replace('2', 'O'))
     
 # Example usage
 if __name__ == "__main__":
