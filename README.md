@@ -8,3 +8,10 @@ Currently trains as Player 1 against a random player, and is pretty quickly able
 To add self-play, one would want to create a callback function which periodically would replace the opponent with the most recent (or so-far best) policy.
 
 Would be curious to see how competitive a neural net can possibly get vs. [the optimal solution](http://blog.gamesolver.org/solving-connect-four/01-introduction/).
+
+### Dependencies
+Python >= 3.9
+```
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+pip install stable-baselines3
+```
