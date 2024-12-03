@@ -1,21 +1,15 @@
 from abc import ABC, abstractmethod
+from typing import Optional, Tuple
 import numpy as np
 import torch as th
 from torch import nn
 import gymnasium as gym
 from gymnasium import spaces
 from stable_baselines3.common.policies import BasePolicy, ActorCriticPolicy
-from stable_baselines3.common.torch_layers import (
-    BaseFeaturesExtractor,
-)
-import warnings
-from typing import Any, Dict, List, Optional, Tuple, Type, TypeVar, Union
+from stable_baselines3.common.torch_layers import BaseFeaturesExtractor
+from stable_baselines3.common.type_aliases import PyTorchObs
+from stable_baselines3.common.distributions import Distribution
 
-from stable_baselines3.common.distributions import (
-    Distribution,
-)
-
-from stable_baselines3.common.type_aliases import PyTorchObs, Schedule
 class MaskPolicy(BasePolicy, ABC):
     @abstractmethod
     def _predict(self, observation: PyTorchObs, action_mask: np.ndarray, deterministic: bool = False) -> th.Tensor:

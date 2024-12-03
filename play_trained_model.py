@@ -1,16 +1,7 @@
 import numpy as np
 import torch as th
 from mask_ppo import MaskPPO
-from environment import Connect4Env, MaskPolicy
 from game import Connect4
-from stable_baselines3.common.type_aliases import PyTorchObs
-
-class ManualPolicy(MaskPolicy):
-    def _predict(self, observation: PyTorchObs, action_mask: np.ndarray, deterministic: bool = False) -> th.Tensor:
-        valid_actions = np.nonzero(action_mask)[0]
-        
-
-env = Connect4Env(ManualPolicy(None, None))
 
 model = MaskPPO.load(
     'model.zip',

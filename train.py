@@ -1,6 +1,7 @@
 from mask_ppo import MaskPPO
 from environment import Connect4Env
 from policies import MaskedACPolicy
+
 lr_schedule = lambda x: 3e-4 / (8 * (1 - x) + 1)**1
 model = MaskPPO(
     MaskedACPolicy, 

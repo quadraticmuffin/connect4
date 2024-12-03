@@ -1,5 +1,3 @@
-import time
-import os
 from typing import Any, Dict, Generator, NamedTuple, Optional, Tuple, Type, Union
 import warnings
 
@@ -9,15 +7,11 @@ from torch.nn import functional as F
 
 from gymnasium import spaces
 from stable_baselines3.common.callbacks import BaseCallback
-
-from stable_baselines3.common.on_policy_algorithm import OnPolicyAlgorithm
-from stable_baselines3.common.vec_env.base_vec_env import VecEnvStepReturn
 from stable_baselines3.common.buffers import RolloutBuffer
 from stable_baselines3.common.policies import ActorCriticPolicy
-from stable_baselines3.common.type_aliases import MaybeCallback, RolloutBufferSamples
-from stable_baselines3.common.utils import configure_logger, obs_as_tensor, explained_variance, get_schedule_fn
+from stable_baselines3.common.utils import obs_as_tensor, explained_variance
 from stable_baselines3.common.vec_env import VecEnv
-from stable_baselines3.common.type_aliases import GymEnv, MaybeCallback, Schedule
+from stable_baselines3.common.type_aliases import MaybeCallback, Schedule
 from stable_baselines3.ppo import PPO
 
 '''

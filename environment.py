@@ -1,5 +1,5 @@
-import gymnasium as gym
 import numpy as np
+import gymnasium as gym
 from gymnasium import spaces
 from game import Connect4
 from policies import MaskPolicy, RandomPolicy
